@@ -5,7 +5,26 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+   <title>JSF Cars Example</title>
+</h:head>
+
+<h:body>
    <f:view>
       <h:outputLabel value="Hello, world"/>
    </f:view>
+
+   <h:form>
+      <h:commandLink action = "#{carBean.page}" value = "Cars">
+         <f:param name = "pageId" value = "1" />
+      </h:commandLink>
+      <br/>
+      <h:commandLink action = "#{companyBean.page}" value = "Companies">
+         <f:param name = "pageId" value = "2" />
+      </h:commandLink>
+   </h:form>
+
+</h:body>
+
 </html>

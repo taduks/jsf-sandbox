@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.services.CarService;
+import org.example.services.CompanyService;
 
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
@@ -21,5 +22,9 @@ public class CarBean {
 
     public Integer getCarCount() {
         return 5;
+    }
+
+    public String page () {
+        return "car?faces-redirect = true";
     }
 }

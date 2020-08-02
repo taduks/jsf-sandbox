@@ -10,6 +10,11 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>*.xhtml</url-pattern>
+        <url-pattern>*.jsf</url-pattern>
     </servlet-mapping>
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
 </web-app>

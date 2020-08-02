@@ -19,6 +19,7 @@
     <modules>
         <module>web</module>
         <module>domain</module>
+        <module>repository</module>
     </modules>
 
     <build>
