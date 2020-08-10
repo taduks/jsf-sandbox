@@ -2,7 +2,9 @@ package org.example;
 
 import org.example.services.CarService;
 import org.example.services.CompanyService;
+import org.example.services.UtilService;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -15,6 +17,18 @@ public class CarBean {
 
     @Inject
     CarService carService;
+
+    @Inject
+    UtilService utilService;
+
+    public CarBean() {
+        System.out.println("Init Car Bean");
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("CarBean init method");
+    }
 
     public List<String> getCarDetails() {
         return carService.getCars();

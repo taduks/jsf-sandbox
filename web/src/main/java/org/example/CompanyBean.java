@@ -16,6 +16,10 @@ public class CompanyBean {
     @Inject
     CompanyService companyService;
 
+    public CompanyBean() {
+        System.out.println("Init Company Bean");
+    }
+
     public List<CompanyEntity> getCompanies() {
         return companyService.getCompanies();
     }
