@@ -15,6 +15,8 @@ import java.util.List;
 @SessionScoped
 public class CarBean {
 
+    private Integer counter = 0;
+
     @Inject
     CarService carService;
 
@@ -27,6 +29,7 @@ public class CarBean {
 
     @PostConstruct
     public void init() {
+        counter++;
         System.out.println("CarBean init method");
     }
 
@@ -40,5 +43,13 @@ public class CarBean {
 
     public String page () {
         return "car?faces-redirect = true";
+    }
+
+    public Integer getCounter() {
+        return counter;
+    }
+
+    public void setCounter(Integer counter) {
+        this.counter = counter;
     }
 }
