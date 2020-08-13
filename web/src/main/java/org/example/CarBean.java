@@ -1,11 +1,9 @@
 package org.example;
 
 import org.example.services.CarService;
-import org.example.services.CompanyService;
 import org.example.services.UtilService;
 
-import javax.annotation.PostConstruct;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -13,7 +11,7 @@ import java.util.List;
 
 @Named
 @SessionScoped
-public class CarBean {
+public class CarBean extends BaseBean {
 
     private Integer counter = 0;
 

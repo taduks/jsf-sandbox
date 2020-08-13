@@ -1,17 +1,16 @@
 package org.example;
 
 import org.example.model.CompanyEntity;
-import org.example.services.CarService;
 import org.example.services.CompanyService;
 
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 
 @Named
 @SessionScoped
-public class CompanyBean {
+public class CompanyBean extends BaseBean{
 
     @Inject
     CompanyService companyService;

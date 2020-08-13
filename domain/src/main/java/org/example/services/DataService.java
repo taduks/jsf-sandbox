@@ -4,9 +4,10 @@ import org.example.model.BaseEntity;
 import org.example.repository.BaseRepository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class DataService {
+public class DataService implements Serializable {
 
     private BaseRepository repository;
 

@@ -6,9 +6,11 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
+
 @Service("utilService")
 @Order(1)
-public class UtilService implements ApplicationContextAware {
+public class UtilService implements ApplicationContextAware, Serializable {
 	private ApplicationContext applicationContext;
 	private int lastTick = 0;
 	

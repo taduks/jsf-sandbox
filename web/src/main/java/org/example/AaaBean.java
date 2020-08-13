@@ -3,17 +3,13 @@ package org.example;
 import org.example.services.UtilService;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Startup;
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.Initialized;
-import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-@Startup
-@Named("aaaBean")
+@Named
 @ApplicationScoped
-public class AaaBean {
+public class AaaBean extends BaseBean {
 
     @Inject
     UtilService utilService;

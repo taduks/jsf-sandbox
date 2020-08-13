@@ -9,7 +9,9 @@
     <title>JSF Companies Example</title>
 </h:head>
 <h:body>
-
+    <h:outputLabel value="SeesionId: "/>
+    <h:outputLabel value="#{companyBean.sessionId}"/>
+    <br/>
     <h2>Company List</h2>
 
     <h:outputText value="#{companyBean.companyCount}" >
