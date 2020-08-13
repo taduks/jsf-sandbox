@@ -30,4 +30,14 @@ public class AaaBean {
     void startup() {
         System.out.println("UtilBean startup method");
     }
+
+    public void openCars () {
+        Redirect redirect = new Redirect("/car.jsf");
+        redirect.execute();
+    }
+
+    public void openCompanies () {
+        Redirect redirect = new Redirect("/companies.jsf");
+        redirect.execute();
+    }
 }

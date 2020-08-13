@@ -11,6 +11,10 @@ public class Redirect {
     private String viewId;
     private Map<String, Object> parameters = new HashMap<>();
 
+    public Redirect (String viewId) {
+        this.viewId = viewId;
+    }
+
     public void execute()  {
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         try {
@@ -22,10 +26,6 @@ public class Redirect {
 
     public String getViewId() {
         return viewId;
-    }
-
-    public void setViewId(String viewId) {
-        this.viewId = viewId;
     }
 
     public Map<String, Object> getParameters() {
