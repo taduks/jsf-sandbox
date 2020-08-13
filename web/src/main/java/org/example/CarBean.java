@@ -27,7 +27,6 @@ public class CarBean {
         System.out.println("Init Car Bean");
     }
 
-    @PostConstruct
     public void init() {
         counter++;
         System.out.println("CarBean init method");
