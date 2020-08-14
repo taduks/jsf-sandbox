@@ -14,6 +14,8 @@ public class AaaBean extends BaseBean {
     @Inject
     UtilService utilService;
 
+    private String value;
+
     public AaaBean() {
         System.out.println("Init Util Bean");
     }
@@ -35,5 +37,13 @@ public class AaaBean extends BaseBean {
     public void openCompanies () {
         Redirect redirect = new Redirect("/companies.jsf");
         redirect.execute();
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 }

@@ -4,29 +4,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
 <h:head>
-   <title>JSF Cars Example</title>
+    <title>JSF Cars Example</title>
 </h:head>
 
 <h:body>
-   <f:view>
-      <h:outputLabel value="SeesionId: "/>
-      <h:outputLabel value="#{aaaBean.sessionId}"/>
-      <br/>
-      <h:outputLabel value="Hello, world"/>
-   </f:view>
 
-   <h:form>
-      <h:commandLink action = "#{aaaBean.openCars}" value = "Cars">
-         <f:param name = "pageId" value = "1" />
-      </h:commandLink>
-      <br/>
-      <h:commandLink action = "#{aaaBean.openCompanies}" value = "Companies">
-         <f:param name = "pageId" value = "2" />
-      </h:commandLink>
-   </h:form>
+    <h:form>
+        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+        <p:panel id="basic" header="Basic" footer="Movie Details" style="margin-bottom:20px">
+            <h:panelGrid columns="2" cellpadding="10">
+                <h:outputLabel value="SeesionId: "/>
+                <h:outputText value="#{aaaBean.sessionId}"/>
+            </h:panelGrid>
+        </p:panel>
+    </h:form>
+
+    <h:form>
+        <p:growl id="growl" life="2000"/>
+        <p:commandButton value="Cars" id="cars" action="#{aaaBean.openCars}" style="margin-right:20px;" ajax="false"/>
+        <p:commandButton value="Companies" id="companies" action="#{aaaBean.openCompanies}" style="margin-right:20px;"
+                         ajax="false"/>
+    </h:form>
 
 </h:body>
 
