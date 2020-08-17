@@ -22,6 +22,14 @@
         <module>repository</module>
     </modules>
 
+    <repositories>
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
