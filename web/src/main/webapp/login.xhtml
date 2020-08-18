@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-
+<f:view>
     <h:head>
         <f:facet name="first">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-            <meta name="apple-mobile-web-app-capable" content="yes" />
-            <link rel="shortcut icon" href="#{request.contextPath}/resources/diamond-layout/images/favicon.ico" type="image/x-icon"></link>
-            <link rel="icon" href="#{request.contextPath}/resources/diamond-layout/images/favicon.ico" type="image/x-icon"></link>
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+            <link rel="shortcut icon" href="#{request.contextPath}/resources/diamond-layout/images/favicon.ico"
+                  type="image/x-icon"></link>
+            <link rel="icon" href="#{request.contextPath}/resources/diamond-layout/images/favicon.ico"
+                  type="image/x-icon"></link>
         </f:facet>
         <title>PrimeFaces Diamond - Login</title>
     </h:head>
-
     <h:body styleClass="login-body #{guestPreferences.inputStyleClass}">
+
         <div class="login-wrapper">
             <div class="login-panel">
                 <p:graphicImage name="images/#{guestPreferences.scheme eq 'light' ? 'logo-dark.svg' : 'logo-white.svg'}" styleClass="logo" library="diamond-layout" />
 
-                <div class="login-form">
-                    <h2>Create Your Free Account</h2>
-                    <p>Already have an account? <a href="#">Login</a></p>
-                    <p:inputText id="name" placeholder="Full Name" />
-                    <p:inputText id="email" placeholder="Email" />
-                    <p:password id="password" placeholder="Password" />
-                    <p:commandButton value="CONTINUE" type="button" />
-                </div>
+                <h:form id="login" class="login-form">
 
-                <p>A problem? <a href="#">Click here</a> and let us help you.</p>
+                    <h2>Prisijunkite</h2>
+
+                    <p:messages id="messages" globalOnly="true"/>
+                    <p:inputText id="email" placeholder="E-Mail" value="#{loginBacking.email}"/>
+                    <p:inputText type="password" id="password" placeholder="Password" value="#{loginBacking.password}"/>
+
+                    <p:selectOneMenu id="company" style="width: 85%;max-width: 310px;margin-bottom: 20px;">
+                        <f:selectItem itemLabel="Muitinės departamentas" itemValue="Option 1" />
+                        <f:selectItem itemLabel="Vilniaus teritorinė muitinė" itemValue="Option 2" />
+                        <f:selectItem itemLabel="Kauno teritorinė muitinė" itemValue="Option 3" />
+                    </p:selectOneMenu>
+
+                    <p:commandButton id="submit" update="@form" value="Login" action="#{loginBacking.submit}"/>
+                </h:form>
+                <p>Nepavyko prisijungti? <a href="#">Spauskite čia</a> ir mes jums padėsime.</p>
             </div>
             <div class="login-image">
                 <div class="login-image-content">
-                    <h1>Access to your</h1>
-                    <h1>Diamond</h1>
-                    <h1>Account</h1>
-                    <h3>Lorem ipsum dolor sit amet, consectetur
-                    <br/> adipiscing elit. Donec posuere velit nec enim 
-                    <br/> sodales, nec placerat erat tincidunt. </h3>
+                    <h1>FASDU</h1>
+                    <h3>Darbo užmokesčio ir
+                        <br/> darbo laiko
+                        <br/> apskaita </h3>
                 </div>
                 <div class="image-footer">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <div class="icons">
-                        <i class="pi pi-github"></i>
-                        <i class="pi pi-twitter"></i>
-                    </div>
-                </div>    
+                    <p>Muitinės departamentas prie LR finansų ministerijos.</p>
+                </div>
             </div>
         </div>
-            
-        <h:outputStylesheet id="layout-scheme" name="css/layout-#{guestPreferences.scheme}.css" library="diamond-layout" />
-        <h:outputStylesheet name="css/primeicons.css" library="diamond-layout" />
-    </h:body>
+        <h:outputStylesheet id="layout-scheme" name="css/layout-#{guestPreferences.scheme}.css"
+                            library="diamond-layout"/>
+        <h:outputStylesheet name="css/primeicons.css" library="diamond-layout"/>
 
+    </h:body>
+</f:view>
 </html>
