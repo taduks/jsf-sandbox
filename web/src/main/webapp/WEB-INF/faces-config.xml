@@ -9,5 +9,17 @@
         <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
     </application>
 
+    <component>
+        <component-type>org.primefaces.component.DiamondMenu</component-type>
+        <component-class>org.primefaces.diamond.component.DiamondMenu</component-class>
+    </component>
+
+    <render-kit>
+        <renderer>
+            <component-family>org.primefaces.component</component-family>
+            <renderer-type>org.primefaces.component.DiamondMenuRenderer</renderer-type>
+            <renderer-class>org.primefaces.diamond.component.DiamondMenuRenderer</renderer-class>
+        </renderer>
+    </render-kit>
   
 </faces-config>

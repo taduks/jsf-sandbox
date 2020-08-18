@@ -48,4 +48,9 @@
     <welcome-file-list>
         <welcome-file>app/empty.xhtml</welcome-file>
     </welcome-file-list>
+
+    <context-param>
+        <param-name>javax.faces.FACELETS_LIBRARIES</param-name>
+        <param-value>/WEB-INF/primefaces-diamond.taglib.xml</param-value>
+    </context-param>
 </web-app>
