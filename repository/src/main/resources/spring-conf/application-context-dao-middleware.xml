@@ -10,7 +10,7 @@
 
     <context:property-placeholder location="classpath:application.properties" />
 
-    <context:component-scan base-package="org.example" />
+    <context:component-scan base-package="org.example.repository" />
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${jdbc.driverClassName}" />
