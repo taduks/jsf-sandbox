@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.services.MessageResourcesHelper;
 import org.example.services.UtilService;
 
 import javax.annotation.PostConstruct;
@@ -45,5 +46,10 @@ public class AaaBean extends BaseBean {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+
+    public String getWelcomeMsg() {
+        return MessageResourcesHelper.getMessage("welCome");
     }
 }
